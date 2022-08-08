@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+
+::-webkit-input-placeholder {
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+body {
+  background-color: beige;
+  position: relative;
+  background-image: url(/logo/vegan-house-logo.png);
+  background-position: center;
+  background-size: 40%;
+  background-blend-mode: soft-light;
+  font-family: "Amatic SC", cursive;
+  font-size: x-large;
+  position: relative;
+}
+
+:root {
+  --header-color: #a1cc66;
+  --header-btn: #83a748;
+}
+#navbar {
+  background-color: var(--header-color);
+}
+
+#list_dropdown {
+  cursor: pointer;
+}
+#listHeader {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#headerBtn {
+  background-color: var(--header-btn);
+}
+
+#titlePage {
+  color: whitesmoke;
+  font-size: 6vmax;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+}
+
+#footer {
+  background-color: var(--header-color);
+}
+
+#sickyIcon  {
+  position: sticky;
+  top: 15%;
+  left: 100%;
+  overflow: hidden;
+}
+
+#sickyIcon:hover  {
+  border-radius: 50%;
+  opacity: 0.5;
+  background-color: var(--header-color);
+}

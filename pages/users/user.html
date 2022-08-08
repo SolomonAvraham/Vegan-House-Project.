@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vegan House</title>
+    <link rel="icon" href="/logo/vegan-house-logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/pages/users/user.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer src="/pages/Home/index.js"></script>
+    <script defer src="/servies/weather-services.js"></script>
+    <script defer src="/pages/users/user.js"></script>
+  </head>
+  <body>
+    <header class="sticky-top">
+      <nav id="navbar" class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html"
+            ><img src="/logo/vegan-house-logo.png" alt="logo" width="55vw"
+          /></a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse text-light" id="navbarCollapse">
+            <div
+              class="navbar-nav me-auto mb-2 mb-md-0 fs-3 fw-semibold"
+              id="headrsTxt"
+            >
+              <div class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  >Home</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  onclick="dropDownList()"
+                  id="list_dropdown"
+                  class="nav-link text-light"
+                  >Begin Your Journey!
+                </a>
+                <ul id="listHeader">
+                  <li>
+                    <a
+                      href="/pages/begin-your-journey/begin-your-journey.html#mainContainer"
+                      >Definition of veganism</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/pages/begin-your-journey/begin-your-journey.html#whyGoVegan"
+                      >Why go vegan?</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/pages/begin-your-journey/begin-your-journey.html#howToGoVegan"
+                      >How to go vegan</a
+                    >
+                  </li>
+               
+                </ul>
+              </div>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/recipes/recipes.html"
+                  >Recipes & Books</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/about-us/about-us.html"
+                  >About-us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/contact-us/contact-us.html"
+                  >Contact-us</a
+                >
+              </li>
+            </div>
+              <div id="weather" class="p-1 fs-5 "> 
+            </div>
+            <img src="/icons/sun.png" class="p-2" alt="suns">
+            <form class="d-flex">
+              <button id="headerBtn" class="btn p-1" type="submit">
+                <a href="/pages/users/user.html">
+                  Log-in
+                  <img src="/icons/user-icon.png" alt="user-icon" width="25" />
+                </a>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      id="userTxt"
+      class="d-flex flex-column text-center align-items-center mt-5 text-success fw-bold fs-2"
+    >
+      <h1 id="userHeader">LOG-IN</h1>
+      <form>
+        <div class="form-outline mb-4">
+          <label class="form-label text-success fw-bold" for="form2Example1"
+            >Email address:</label
+          >
+          <input
+            type="email"
+            id="email"
+            placeholder="email@gmail.com"
+            class="form-control"
+          />
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <label class="form-label text-success fw-bold" for="form2Example2"
+            >Password:</label
+          >
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            class="form-control"
+          />
+        </div>
+
+        <!-- 2 column grid layout for inline styling -->
+        <div class="row mb-4">
+          <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="form2Example31"
+                checked
+              />
+              <label
+                class="form-check-label text-success fs-5"
+                for="form2Example31"
+              >
+                Remember me
+              </label>
+            </div>
+          </div>
+
+          <div class="col">
+            <!-- Simple link -->
+            <a href="#!" class="Hoverext" style="font-size: 1rem"
+              >Forgot password?</a
+            >
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" class="btn btn-success btn-block mb-4">
+          Sign in
+        </button>
+
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>
+            Not a member?
+            <a href="#Register" class="Hoverext" class="text-primary"
+              >Sign up</a
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div class="container"></div>
+
+    <section>
+      <div id="Register" class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-lg-12 col-xl-11">
+            <div class="container-fluid text-black">
+              <div class="p-md-5">
+                <div id="formTxt" class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                    <p
+                      id="formHeader"
+                      class="text-center text-success fw-bold mb-5 mx-1 mx-md-4 mt-4"
+                    >
+                      Sign up!
+                    </p>
+
+                    <form onsubmit="" class="mx-1 mx-md-4">
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label for="userName">User Name:</label>
+                          <input
+                            placeholder="Soly Moly"
+                            type="text"
+                            id="userName"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label for="email_signUp">Your Email:</label>
+                          <input
+                            placeholder="email@gmail.com"
+                            type="email"
+                            id="email_signUp"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label for="ps_signUp">Password:</label>
+                          <input
+                            placeholder="Password"
+                            type="password"
+                            id="ps_signUp"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label for="re_ps_signUp"
+                            >Repeat your password:</label
+                          >
+                          <input
+                            placeholder="Re-Password"
+                            type="password"
+                            id="re_ps_signUp"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+
+                      <div
+                        class="form-check d-flex justify-content-center mb-5"
+                      >
+                        <input type="checkbox" value="" id="checkbox_signUp" />
+                        <label class="form-check-label" for="checkbox_signUp">
+                          I agree all statements in
+                          <a href="#!" class="Hoverext">Terms of service</a>
+                        </label>
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
+                      >
+                        <button type="button" class="btn btn-success btn-lg">
+                          Register
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <div
+                    class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+                  >
+                    <img
+                      src="/pics/carosla-pic-4.jpeg"
+                      class="img-fluid"
+                      alt="Sample image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="text-center text-lg-start text-muted">
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+      </section>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Vegan House</h6>
+              <p>
+                Vegan House, the place you might begin your journey to become a
+                vegans, slowly but surely! A truly cruelty-free life is more
+                than just the food you eat, so while you'll find plenty of
+                amazing vegan informaition, guidens and more. we also highlight
+                inspirational vegan influensters, and vegan lifestyle tips and
+                advice in hundreds of articles from the around the world.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                social networking site
+              </h6>
+
+              <p>
+                <a
+                  target="_blank"
+                  class="text-reset"
+                  href="https://github.com/SolomonAvraham"
+                  ><img
+                    src="/logo/github-logo.png"
+                    width="30"
+                    alt="github-logo"
+                  />
+                </a>
+              </p>
+              <p>
+                <a
+                  class="text-reset"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/solomon-avraham-82b8a2234/"
+                  ><img src="/logo/linkden-logo.png" width="30" alt="" />
+                </a>
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">More informaition</h6>
+              <p>
+                <a
+                  href="https://www.vegansociety.com/"
+                  target="_blank"
+                  class="text-reset"
+                  >Vegan Society</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.etsy.com/market/vegan_supporter"
+                  target="_blank"
+                  class="text-reset"
+                  >Etsy</a
+                >
+              </p>
+              <p>
+                <a href="https://vegan.com/" target="_blank" class="text-reset"
+                  >Vegan</a
+                >
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Tel-Aviv, Israel.</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                vegan_house_support@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> +972 50-465-2435</p>
+              <p><i class="fas fa-print me-3"></i> +972 08-622-2218</p>
+              <p>
+                <a href=""
+                  ><img src="/logo/vegan-house-logo.png" width="100" alt="logo"
+                /></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="/index.html">Vegan-House.com</a>
+      </div>
+    </footer>
+  </body>
+</html>

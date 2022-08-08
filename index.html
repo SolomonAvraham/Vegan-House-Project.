@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vegan House</title>
+    <link rel="icon" href="logo/vegan-house-logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="pages/Home/index.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer src="servies/weather-services.js"></script>
+    <script defer src="servies/books-servies.js"></script>
+    <script defer src="pages/Home/index.js"></script>
+  </head>
+  <body>
+    <header class="sticky-top">
+      <nav id="navbar" class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"
+            ><img src="logo/vegan-house-logo.png" alt="logo" width="55vw"
+          /></a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse text-light" id="navbarCollapse">
+            <div
+              class="navbar-nav me-auto mb-2 mb-md-0 fs-3 fw-semibold"
+              id="headrsTxt"
+            >
+              <div class="nav-item">
+                <a
+                  class="nav-link active text-success"
+                  aria-current="page"
+                  href="index.html"
+                  >Home</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  onclick="dropDownList()"
+                  id="list_dropdown"
+                  class="nav-link text-light"
+                  >Begin Your Journey!
+                </a>
+                <ul id="listHeader">
+                  <li>
+                    <a
+                      href="pages/begin-your-journey/begin-your-journey.html#definitionOfVeganism"
+                      >Definition of veganism</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="pages/begin-your-journey/begin-your-journey.html#whyGoVegan"
+                      >Why go vegan?</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="pages/begin-your-journey/begin-your-journey.html#howToGoVegan"
+                      >How to go vegan</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/recipes/recipes.html"
+                  >Recipes & Books</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/about-us/about-us.html"
+                  >About-us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/contact-us/contact-us.html"
+                  >Contact-us</a
+                >
+              </li>
+            </div>
+            <div id="weather" class="p-1 fs-5"></div>
+            <img src="icons/sun.png" class="p-2" alt="suns" />
+            <form class="d-flex">
+              <button id="headerBtn" class="btn p-1" type="submit">
+                <a href="pages/users/user.html">
+                  Log-in
+                  <img src="icons/user-icon.png" alt="user-icon" width="25" />
+                </a>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div>
+        <div
+          class="container-lg-fluid position-relative d-flex flex-column align-items-center justify-content-center"
+        >
+          <h1 id="header" class="text-light">
+            Welcome To <br /><span id="header_inner" class="fw-bolder"
+              >Veagan House</span
+            >.
+          </h1>
+          <img src="pics/carosla-pic-1.jpeg" class="img-fluid opacity-75" />
+        </div>
+      </div>
+      <hr class="container mt-5 mb-5" />
+    </main>
+    <div class="container d-flex">
+      <hr class="featurette-divider mt-5 mb-5" />
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <img src="logo/vegan-house-logo.png" class="w-100" alt="" />
+        </div>
+
+        <div class="col-lg-6">
+          <p class="fs-4">
+            <span id="titleHeader">Hello, and Welcome to vegan house. </span>
+            Veganism is the practice of abstaining from the use of animal
+            products, particularly in diet, and an associated philosophy that
+            rejects the commodity status of animals. An individual who follows
+            the diet or philosophy is known as a vegan. Distinctions may be made
+            between several categories of veganism. Dietary vegans, also known
+            as "strict vegetarians", refrain from consuming meat, eggs, dairy
+            products, and any other animal-derived substances. An ethical vegan
+            is someone who not only follows a plant-based diet but extends the
+            philosophy into other areas of their lives, opposes the use of
+            animals for any purpose,[e] and tries to avoid any cruelty and
+            exploitation of all animals including humans. Another term is
+            "environmental veganism", which refers to the avoidance of animal
+            products on the premise that the industrial farming of animals is
+            environmentally damaging and unsustainable.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <hr class="mt-5 mb-5" />
+      <h1 class="text-center text-bg-success mb-5">
+        <a href="pages/begin-your-journey/begin-your-journey.html">
+          Beging Your Journey!</a
+        >
+      </h1>
+
+      <div class="row">
+        <div class="col-lg-6 order-md-2">
+          <h2 class=" ">
+            The Benefit of veganism, it's that good.
+            <span class="text-muted">See for yourself.</span>
+          </h2>
+          <p class=" ">
+            Another featurette? Of course. More placeholder content here to give
+            you an idea of how this layout would work with some actual
+            real-world content in place.Each day, more people are embracing a
+            vegan, or plant-based, diet. According to a 2019 article in The
+            Economist, 25% of 25- to 34-year-old Americans say they are vegans
+            or vegetarians. And interest in veganism hit an all-time high in
+            2020, according to a report by the food-focused website Chef's
+            Pencil. For some, shunning dairy, meat and other animal products may
+            seem like an extreme sacrifice. For others, the personal and
+            societal benefits associated with a vegan diet make the choice a
+            no-brainer; for instance, many people care deeply about the welfare
+            of animals. The potential health benefits alone inspire many to
+            switch.
+          </p>
+        </div>
+        <div class="col-lg-6 order-md-1">
+          <iframe
+            style="height: 40vh"
+            class="img-thumbnail w-100"
+            src="https://www.youtube.com/embed/acePa05Cxpo"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h2 class=" ">
+            Is the future vegan? <span class="text-muted">spoiler, Yes!.</span>
+          </h2>
+          <p class=" ">
+            The idea of everyone adopting a vegan diet might sound extreme, but
+            in the last decade, the number of people in the UK following a
+            plant-based diet has risen 340%. There are now over 0.5 million
+            British vegans – with around 20% of 16 to 24-year-olds in the UK
+            following a vegetarian or vegan diet. You can see this growing
+            interest in veganism all around us. From the explosion of dairy-free
+            milk alternatives on supermarket shelves and the growing number of
+            celebrity advocates like Liam Hemsworth and Natalie Portman, to
+            movies like Cowspiracy and Simon Amstell’s futuristic vegan comedy
+            Carnage. What was recently a radical lifestyle choice is slowly
+            moving into the mainstream. For scientists, policymakers and
+            economists, the idea of a vegan future is especially interesting –
+            and one of the biggest reasons is the environment.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <iframe
+            style="height: 40vh"
+            class="img-thumbnail w-100"
+            src="https://www.youtube.com/embed/hwoL6hWd4l0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <hr class="bg-secondary mt-5" />
+    <div class="container d-flex justify-content-center">
+      <p class="text-secondary">
+        Be part of our community
+        <a href="/pages/begin-your-journey/begin-your-journey.html">
+          <img
+            style="width: 5rem"
+            class="img-fluid"
+            src="/logo/vegan-house-logo.png"
+            alt=""
+          /> </a
+        >.
+      </p>
+    </div>
+
+    <footer id="footer" class="text-center text-lg-start mt-5 text-muted">
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+      </section>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>Vegan House
+              </h6>
+              <p>
+                Vegan House, the place you might begin your journy to become a
+                vegans, slowly but surely! A truly cruelty-free life is more
+                than just the food you eat, so while you'll find plenty of
+                amazing vegan informaition, guidens and more. we also highlight
+                inspirational vegan influensters, and vegan lifestyle tips and
+                advice in hundreds of articles from the around the world.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                social networking site
+              </h6>
+
+              <p>
+                <a
+                  target="_blank"
+                  class="text-reset"
+                  href="https://github.com/SolomonAvraham"
+                  ><img
+                    src="logo/github-logo.png"
+                    width="30"
+                    alt="github-logo"
+                  />
+                </a>
+              </p>
+              <p>
+                <a
+                  class="text-reset"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/solomon-avraham-82b8a2234/"
+                  ><img src="logo/linkden-logo.png" width="30" alt="" />
+                </a>
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">More informaition</h6>
+              <p>
+                <a
+                  href="https://www.vegansociety.com/"
+                  target="_blank"
+                  class="text-reset"
+                  >Vegan Society</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.etsy.com/market/vegan_supporter"
+                  target="_blank"
+                  class="text-reset"
+                  >Etsy</a
+                >
+              </p>
+              <p>
+                <a href="https://vegan.com/" target="_blank" class="text-reset"
+                  >Vegan</a
+                >
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Tel-Aviv, Israel.</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                vegan_house_support@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> +972 50-465-2435</p>
+              <p><i class="fas fa-print me-3"></i> +972 08-622-2218</p>
+              <p>
+                <a href=""
+                  ><img src="logo/vegan-house-logo.png" width="100" alt="logo"
+                /></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="/index.html">Vegan-House.com</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vegan House Journey</title>
+    <link rel="icon" href="/logo/vegan-house-logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="/pages/begin-your-journey/begin-your-journey.css"
+    />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer src="/pages/Home/index.js"></script>
+    <script defer src="/servies/weather-services.js"></script>
+
+    <script defer src="/servies/books-s.js"></script>
+    <script
+      defer
+      src="/pages/begin-your-journey/begin-your-journey.js"
+    ></script>
+  </head>
+  <body>
+    <header id="definitionOfVeganism" class="sticky-top">
+      <nav id="navbar" class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html"
+            ><img src="/logo/vegan-house-logo.png" alt="logo" width="55vw"
+          /></a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse text-light" id="navbarCollapse">
+            <div
+              class="navbar-nav me-auto mb-2 mb-md-0 fs-3 fw-semibold"
+              id="headrsTxt"
+            >
+              <div class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  >Home</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  onclick="dropDownList()"
+                  id="list_dropdown"
+                  class="nav-link text-light"
+                  >Begin Your Journey!
+                </a>
+                <ul id="listHeader" onclick="stopdropDownList()">
+                  <li>
+                    <a href="#definitionOfVeganism">Definition of veganism</a>
+                  </li>
+                  <li>
+                    <a href="#whyGoVegan">Why go vegan?</a>
+                  </li>
+                  <li>
+                    <a href="#howToGoVegan">How to go vegan</a>
+                  </li>
+                </ul>
+              </div>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/recipes/recipes.html"
+                  >Recipes & Books</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/about-us/about-us.html"
+                  >About-us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/contact-us/contact-us.html"
+                  >Contact-us</a
+                >
+              </li>
+            </div>
+            <div id="weather" class="p-1 fs-5"></div>
+            <img src="/icons/sun.png" class="p-2" alt="suns" />
+            <form class="d-flex">
+              <button id="headerBtn" class="btn p-1" type="submit">
+                <a href="/pages/users/user.html">
+                  Log-in
+                  <img src="/icons/user-icon.png" alt="user-icon" width="25" />
+                </a>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      class="container d-flex flex-column justify-content-center align-items-center text-center mt-5"
+      id="mainContainer"
+    >
+      <div id="top" class="container">
+        <h1 class="text-success fw-bold">Definition of veganism</h1>
+        <hr />
+        <p>
+          "Veganism is a philosophy and way of living which seeks to exclude—as
+          far as is possible and practicable—all forms of exploitation of, and
+          cruelty to, animals for food, clothing or any other purpose; and by
+          extension, promotes the development and use of animal-free
+          alternatives for the benefit of animals, humans and the environment.
+          In dietary terms it denotes the practice of dispensing with all
+          products derived wholly or partly from animals ."
+        </p>
+        <p>
+          <strong
+            >There are many ways to embrace vegan living. Yet one thing all
+            vegans have in common is</strong
+          ><strong
+            >a plant-based diet avoiding all animal foods such as meat
+            (including fish, shellfish and insects), dairy, eggs and Honey - as
+            well as avoiding animal-derived materials, products tested on
+            animals and places that use animals for entertainment.</strong
+          >
+        </p>
+        <h2>History<br /></h2>
+        <p>
+          Although the vegan diet was defined early on in The Vegan Society's
+          beginnings in 1944, it was as late as 1949 before Leslie J Cross
+          pointed out that the society lacked a definition of veganism. He
+          suggested “[t]he principle of the emancipation of animals from
+          exploitation by man”. This is later clarified as “to seek an end to
+          the use of animals by man for food, commodities, work, hunting,
+          vivisection, and by all other uses involving exploitation of animal
+          life by man”.
+        </p>
+        <p>
+          The society was first registered as a charity in August 1964 but its
+          assets were later transferred to a new charity when it also became a
+          limited company in December 1979. The definition of veganism and the
+          charitable objects of the society were amended and refined over the
+          years. By winter 1988 the current definition was in use - although the
+          phrasing has changed slightly over the years.
+        </p>
+        <h2>So what do vegans eat?<br /></h2>
+        <p>
+          A great deal - you'll soon find a whole new world of exciting foods
+          and flavours opening up to you. A vegan diet is richly diverse and
+          comprises all kinds of fruits, vegetables, nuts, grains, seeds, beans
+          and pulses - all of which can be prepared in endless combinations that
+          will ensure you're never bored. From curry to cake, pasties to pizzas,
+          all your favourite things can be suitable for a vegan diet if they're
+          made with plant-based ingredients. Check out our vegan
+          <a href="/pages/recipes/recipes.html">recipes</a> for ideas.
+        </p>
+        <h2>It's not just about diet</h2>
+
+        <p>
+          Vegans avoid exploiting animals for any purpose, with compassion being
+          a key reason many choose a vegan lifestyle. From accessories and
+          clothing to makeup and bathroom items, animal products and products
+          tested on animals are found in more places than you might expect.
+          Fortunately nowadays there are affordable and easily-sourced
+          alternatives to just about everything. With over 61,000 products and
+          services registered with our Vegan Trademark alone, living a vegan
+          lifestyle has never been easier.
+        </p>
+
+        <p>
+          Currently all medicine in the UK must be tested on animals before it
+          is deemed safe for human use, but please note:
+          <strong
+            >The Vegan Society DOES NOT recommend you avoid medication
+            prescribed to you by your doctor </strong
+          >- a vegan who is looking after themselves the best they can is an
+          asset to the movement. What you can do is ask your GP or pharmacist to
+          provide you, if possible, with medication that does not contain animal
+          products such as gelatine or lactose. For more information visit the
+          <a href="http://www.medicines.org.uk" target="_blank"
+            >medicines website</a
+          >, which contains information on medicines prescribed in the UK,
+          including ingredients lists.
+        </p>
+        <h3>Medical charities<br /></h3>
+        <p>
+          If you're a medical charity supporter you may wish to
+          <a
+            href="https://www.animalaid.org.uk/the-issues/our-campaigns/animal-experiments/health-charities-animal-testing/"
+            target="_blank"
+            >check whether your chosen charity performs tests on animals</a
+          >. There are many charities that don't currently conduct animal tests
+          and many vegans prefer donating to charities that actively seek
+          alternative methods of testing.
+        </p>
+        <h3>Entertainment<br /></h3>
+        <p>
+          Vegans choose not to support animal exploitation in any form and so
+          avoid visiting zoos or aquariums, or taking part in dog or horse
+          racing. A great alternative is visiting and supporting animal
+          sanctuaries that provide safe and loving homes for rescued animals.
+        </p>
+        <p>
+          Want to find out more about the vegan lifestyle? Sign up to the free
+          <a href="/try-vegan/get-support" target="_blank">Vegan Pledge</a>
+          today. There are hundreds of thousands of vegans across the globe -
+          with you, we're that much stronger.
+        </p>
+      </div>
+      <div id="sickyIcon">
+        <a href="#top"
+          ><img src="/icons/arrow_circle_up_black.png" class="w-75"
+        /></a>
+      </div>
+
+      <div id="whyGoVegan">
+        <h1 class="text-success fw-bold fs-1 mt-5">Why go vegan?</h1>
+        <hr />
+        <div>
+          <div>
+            <h2>For the animals</h2>
+            <p>
+              Preventing the exploitation of animals is not the only reason for
+              becoming vegan, but for many it remains the key factor in their
+              decision to go vegan and stay vegan. Having emotional attachments
+              with animals may form part of that reason, while many believe that
+              all sentient creatures have a right to life and freedom. Specifics
+              aside, avoiding animal products is one of the most obvious ways
+              you can take a stand against animal cruelty and animal
+              exploitation everywhere.
+            </p>
+            <h2>For your health</h2>
+
+            <p>
+              Going vegan is a great opportunity to learn more about nutrition
+              and cooking, and improve your diet. Getting your nutrients from
+              plant foods allows more room in your diet for health-promoting
+              options like whole grains, fruit, nuts, seeds and vegetables,
+              which are packed full of beneficial fibre, vitamins and minerals.
+            </p>
+            <h2>For the environment<br /></h2>
+            <p>
+              From recycling our household rubbish to cycling to work, we're all
+              aware of ways to live a greener life. One of the most effective
+              things an individual can do to lower their carbon footprint is to
+              avoid all animal products. This goes way beyond the problem of cow
+              flatulence!
+            </p>
+            <h3>Why is meat and dairy so bad for the environment?</h3>
+            <p>
+              The production of meat and other animal products places a heavy
+              burden on the environment - from crops and water required to feed
+              the animals, to the transport and other processes involved from
+              farm to fork. The vast amount of grain feed required for meat
+              production is a significant contributor to deforestation, habitat
+              loss and species extinction. In Brazil alone, the equivalent of
+              5.6 million acres of land is used to grow soya beans for animals
+              in Europe. This land contributes to developing world malnutrition
+              by driving impoverished populations to grow cash crops for animal
+              feed, rather than food for themselves. On the other hand,
+              considerably lower quantities of crops and water are required to
+              sustain a vegan diet, making the switch to veganism one of the
+              easiest, most enjoyable and most effective ways to reduce our
+              impact on the environment. For more on how veganism is the way
+              forward for the environment.
+            </p>
+            <h2>For people</h2>
+            <p>
+              Just like veganism is the sustainable option when it comes to
+              looking after our planet, plant-based living is also a more
+              sustainable way of feeding the human family. A plant-based diet
+              requires only one third of the land needed to support a meat and
+              dairy diet. With rising global food and water insecurity due to a
+              myriad of environmental and socio-economic problems, there's never
+              been a better time to adopt a more sustainable way of living.
+              Avoiding animal products is not just one of the simplest ways an
+              individual can reduce the strain on food as well as other
+              resources, it's the simplest way to take a stand against
+              inefficient food systems which disproportionately affect&nbsp;the
+              poorest people all over the world.
+            </p>
+            <h3>
+              <img
+                class="p-3 w-50"
+                src="/pics/carosla-pic-3.jpeg"
+                style="float: left"
+              /><br />
+            </h3>
+            <h3>Why vegetarian isn't enough</h3>
+            <p>
+              The suffering caused by the dairy and egg industry is possibly
+              less well publicised than the plight of factory farmed animals.
+              The production of dairy products necessitates the death of
+              countless male calves that are of no use to the dairy farmer, as
+              well as the premature death of cows slaughtered when their milk
+              production decreases. Similarly, in the egg industry, even
+              'ethical' or 'free range' eggs involve the killing of the
+              'unnecessary' male chicks when just a day old.
+            </p>
+            <h3>Ethical meat?<br /></h3>
+            <p>
+              It's tempting to want to believe that the meat we eat is ethical,
+              that our 'food animals' have lived full, happy lives and that they
+              have experienced no pain or fear at the slaughterhouse. Yet the
+              sad truth is that all living creatures (even those labelled 'free
+              range' or 'organic') fear death, just as we do. No matter how they
+              are treated when alive, they all experience the same fear when it
+              comes to slaughter.
+            </p>
+            <h2>The good news<br /></h2>
+            <p>
+              The good news is there IS something we can do about it. Every time
+              we shop or order food in a restaurant - every time we eat - we can
+              choose to help these animals. Every time we make the switch from
+              an animal product to a vegan one we are standing up for farmed
+              animals everywhere. Going vegan is easier than ever before with
+              veganism becoming increasingly mainstream as more and more people
+              from all walks of life discover the benefits of living this way.
+            </p>
+            <p>
+              <strong>It's</strong
+              ><strong
+                >time to ask ourselves: if it is now possible to live a life
+                that involves delicious food and drink, delivers better health,
+                leaves a smaller carbon footprint and avoids killing other
+                creatures - then why don't we?</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="height: 10vh"></div>
+
+      <div id="howToGoVegan">
+        <h1 class="text-success fw-bold fs-1 mb-5">How to go vegan</h1>
+        <hr />
+        <div>
+          <div>
+            <h2>
+              <img
+                alt="A variety of vegan cakes"
+                class="  w-50 p-3"
+                src="/pics/carosla-pic-2.jpeg"
+                style="float: right"
+              />It's time we let you in on a little secret: going vegan is
+              actually a piece of cakes.
+            </h2>
+            <p>
+              Whatever brought you as far as this page, you've already taken the
+              all-important first step on your vegan journey. Here are some
+              tried and tested tips to help this exciting process go smoothly.
+            </p>
+            <h2>Take it slow</h2>
+            <p>
+              Keep your end goal in mind, but go at your own pace. Some people
+              manage to go vegan overnight and if that's the right approach for
+              you, fantastic. But don't be concerned if you feel you need more
+              time. Like any other lifestyle change, going vegan not only takes
+              getting used to, but it takes time to determine what will work
+              best for you. It's not a one size fits all experience and there
+              are numerous approaches you can take.
+            </p>
+            <p>
+              Making small changes to your everyday meals is one of the easiest
+              ways to increase the amount of plant-based foods in your diet. You
+              could start by removing meat or dairy one day a week and go from
+              there. Or you could try changing one meal at a time, having vegan
+              breakfasts during your first week, adding a vegan lunch during
+              week two and so on. You could even try changing one product at a
+              time by swapping cow's milk for almond or soya milk or butter for
+              coconut oil or margarine. There's a plant-based alternative for
+              almost every type of food you can think of, so you don't have to
+              miss out on any of your favourite foods.
+            </p>
+
+            <h2>
+              <img
+                alt="variety of vegan meat and cheese alternatives"
+                class=" w-50 p-3"
+                src="/pics/carosla-pic-4.jpeg"
+                style="float: left"
+              /><br />
+            </h2>
+            <h2>Do it right<br /></h2>
+            <p>
+              Make sure you don't miss out on essential nutrients. Just because
+              you're vegan that doesn't mean you're 100% healthy, as there are
+              vegan versions of almost every type of junk food you can think of.
+              As long as you eat a wide variety of tasty plant foods, planning a
+              healthy diet that incorporates all the vitamins and nutrients you
+              need will be a breeze. Check out our nutrition pages for more
+              information, or seek advice from a registered dietitian.
+            </p>
+            <h2>Try new things</h2>
+            <p>
+              Treat your taste buds to new foods and new flavours. Leaving your
+              food comfort zone will take you on a voyage of discovery of new
+              cuisines. There are thousands of vegan recipes out there from
+              every corner of the globe. Whatever your culinary preference,
+              you'll encounter amazing new dishes and interesting variations on
+              your old favourites. Yet you don't have to be an award-winning
+              chef to achieve this. You'll be pleasantly surprised by the number
+              of meals you can easily prepare from things already in your
+              kitchen or local supermarket ingredients.
+            </p>
+
+            <h2>Keep learning<br /></h2>
+            <p>
+              Remember that going vegan is a learning curve.&nbsp;To live as a
+              vegan in a non-vegan world takes both courage and curiosity.
+              Veganism has been around since 1944, but it’s still a relatively
+              new concept to many people. It’s important you allow yourself time
+              to learn about the various strands of veganism.
+            </p>
+
+            <p>
+              <img
+                alt="Fruit and veg market stalls"
+                class="w-50 p-3"
+                src="/pics/carosla-pic-5.jpeg"
+                style="float: right"
+              />
+            </p>
+            <h2>Ask for help</h2>
+            <p>
+              >"Where can I buy vegan chocolate?" "How do I bake cakes without
+              eggs?" "I don't know how to speak to my family about
+              veganism!”Fear not –you're not alone. Our website is full of
+              information and resources covering all of these questions and
+              more. There's nothing like talking to other vegans to make your
+              transition even easier.
+            </p>
+
+            <h2>Remember why</h2>
+            <p>
+              Keep reminding yourself of the reasons you've chosen a vegan
+              lifestyle, and the benefits you've felt since going vegan. You'll
+              probably find going vegan a lot easier than expected, but if you
+              do have a bad day or feel this whole vegan thing is too much like
+              hard work. take a deep breath and briefly reflect on your choices.
+              Reading books or regularly watching informative and uplifting
+              videos about veganism can help, as does keeping motivating visual
+              reminders like photos of your favourite animals. Or how about
+              locating your nearest animal sanctuary? Spending time with animals
+              who are traditionally farmed and getting to know their wonderful
+              personalities is a great way to reaffirm your commitment to
+              veganism.
+            </p>
+            <h2>Don't give up</h2>
+            <p>
+              If you believe in yourself, vegan living will soon become second
+              nature. There is always a better reason to stick with your
+              decision than to go against it. If you're having issues with
+              friends or family, don't give up! be sure to enjoy it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="bg-secondary mt-5" />
+    <div class="container d-flex justify-content-center">
+      <p class="text-secondary">
+        Be part of our community
+        <a href="/pages/begin-your-journey/begin-your-journey.html">
+          <img
+            style="width: 5rem"
+            class="img-fluid"
+            src="/logo/vegan-house-logo.png"
+            alt=""
+          /> </a
+        >.
+      </p>
+    </div>
+
+    <footer id="footer" class="text-center text-lg-start text-muted">
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+      </section>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Vegan House</h6>
+              <p>
+                Vegan House, the place you might begin your journey to become a
+                vegans, slowly but surely! A truly cruelty-free life is more
+                than just the food you eat, so while you'll find plenty of
+                amazing vegan informaition, guidens and more. we also highlight
+                inspirational vegan influensters, and vegan lifestyle tips and
+                advice in hundreds of articles from the around the world.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                social networking site
+              </h6>
+
+              <p>
+                <a
+                  target="_blank"
+                  class="text-reset"
+                  href="https://github.com/SolomonAvraham"
+                  ><img
+                    src="/logo/github-logo.png"
+                    width="30"
+                    alt="github-logo"
+                  />
+                </a>
+              </p>
+              <p>
+                <a
+                  class="text-reset"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/solomon-avraham-82b8a2234/"
+                  ><img src="/logo/linkden-logo.png" width="30" alt="" />
+                </a>
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">More informaition</h6>
+              <p>
+                <a
+                  href="https://www.vegansociety.com/"
+                  target="_blank"
+                  class="text-reset"
+                  >Vegan Society</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.etsy.com/market/vegan_supporter"
+                  target="_blank"
+                  class="text-reset"
+                  >Etsy</a
+                >
+              </p>
+              <p>
+                <a href="https://vegan.com/" target="_blank" class="text-reset"
+                  >Vegan</a
+                >
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Tel-Aviv, Israel.</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                vegan_house_support@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> +972 50-465-2435</p>
+              <p><i class="fas fa-print me-3"></i> +972 08-622-2218</p>
+              <p>
+                <a href=""
+                  ><img src="/logo/vegan-house-logo.png" width="100" alt="logo"
+                /></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="/index.html">Vegan-House.com</a>
+      </div>
+    </footer>
+  </body>
+</html>

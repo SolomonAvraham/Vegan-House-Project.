@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vegan House</title>
+    <link rel="icon" href="/logo/vegan-house-logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/pages/recipes/recipes.css" />
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script defer src="/pages/Home/index.js"></script>
+    <script defer src="/servies/weather-services.js"></script>
+
+    <script defer src="/servies/books-servies.js"></script>
+    <script defer src="/pages/recipes/recipes.js"></script>
+  </head>
+  <body>
+    <header class="sticky-top">
+      <nav id="navbar" class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html"
+            ><img src="/logo/vegan-house-logo.png" alt="logo" width="55vw"
+          /></a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse text-light" id="navbarCollapse">
+            <div
+              class="navbar-nav me-auto mb-2 mb-md-0 fs-3 fw-semibold"
+              id="headrsTxt"
+            >
+              <div class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  >Home</a
+                >
+              </div>
+              <div class="nav-item">
+                <a
+                  onclick="dropDownList()"
+                  id="list_dropdown"
+                  class="nav-link text-light"
+                  >Begin Your Journey!
+                </a>
+                <ul id="listHeader">
+                  <li>
+                    <a
+                      href="/pages/begin-your-journey/begin-your-journey.html#mainContainer"
+                      >Definition of veganism</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/pages/begin-your-journey/begin-your-journey.html#whyGoVegan"
+                      >Why go vegan?</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/pages/begin-your-journey/begin-your-journey.html#howToGoVegan"
+                      >How to go vegan</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-success"
+                  href="/pages/recipes/recipes.html"
+                  >Recipes & Books</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/about-us/about-us.html"
+                  >About-us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/contact-us/contact-us.html"
+                  >Contact-us</a
+                >
+              </li>
+            </div>
+            <div id="weather" class="p-1 fs-5"></div>
+            <img src="/icons/sun.png" class="p-2" alt="suns" />
+            <form class="d-flex">
+              <button id="headerBtn" class="btn p-1" type="submit">
+                <a href="/pages/users/user.html">
+                  Log-in
+                  <img src="/icons/user-icon.png" alt="user-icon" width="25" />
+                </a>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container mt-5 text-center">
+      <div class="row">
+        <div class="col-10 col-lg-6">
+          <h1 class="  text-bg-success">Weekly Updates...</h1>
+        </div >
+        <div class="col-2 col-lg ">
+          <p class="fs-6 float-end text-secondary">Last Update:Aug 8 2022.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-bg-success">
+      <div style="font-size: 3rem">RECPIES</div>
+    </div>
+
+    <div
+      class="container d-flex flex-wrap justify-content-center text-center mt-5 mb-5"
+    >
+      <div class="row">
+        <div class="col-12 mt-5 col-lg-2">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/ffb/ffb0fd1a00346183ed14d76486201470.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIFNdnvQ%2FyOLC38SGntMdit42fCEPB%2BcjUiTWQWJ01LXfAiEAoq2CAPh3LxfT8UJKWzKivT2cgRL1zmKP6aWyEcLUDDcq2wQI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDMwV8dfiF%2BMOpIDytiqvBMvjHA199Xvq1ridGzUaWS18Y0s6UNsevEzYhBlO7AgfvRUkUhMhacwC1aGiadvO50cFs4G30I056Qojs3Yp%2FGrwA3hXGt%2Fz%2B2tSGXcXDLlAqrZ%2FoHAVZLA19Xqktw%2BV7k%2BluiCfJ5bLgutB%2BaWN8tztWUbam5BUbzQPvTzznu0KJpIEf9XHpw2RM%2FlL%2F%2FyRv7ymvRPwVLRnLtb0e%2B60v2g0PkKWcEr2uQswqFFL8%2BBy2vBAXA%2FP5jKK%2F%2Bq4nS7lPjCZpu0QJilIh4NGLPieLhXINnp6SEvC0NrSJY0%2BafGYDl0yPZnfxdwxM%2BQ%2FD9wRGfNe9U8BfLHGEAVWyuHVQZEL%2B7wx7KoItdVhJWA1MvI45c6rKxoTjz644rHBKadYplKIHoUr%2F9Z1UPt7c1Jq3YnGmnTpmcwAQYW8%2BVR47KpYyxfMOniB2%2BhuGWMla0JaHGyDV2Wl5r9UClq1V3EmX9LKSQDMsxBQD08zIVNxoVfOWJrDcC9lZFpBWzDZqx%2B%2F7DyOr%2FhjNJx4uf9ed%2FRF0%2FL8ZG4wqY4t02ZV%2FLRZNhErr70XR9chcie7hP7Ni6m9h8%2BkaGaI3JJsBEucEWSfdZoWmsj3%2BwMu87gYBkZiQIkm7ngoMpldXvfawZRcLd5DwNTByuxBa0MYai84MVyQ%2Bo55QAJyIY8pjjXgmWgKzjk3RonldzMx8ZFIKPXYxduLsUUtSgmW8%2BUaXFgQFmbLHGsNg0ZeC%2BgIXH11pU0fxqcwv%2Fm%2BlwY6qQGAUtiGDJa3snRlvjCfLk8FjMHftw%2FnQB5mZOSANAvi1bRsOEhai7w8Z%2B2HG9K0jR933L8kiGtzv3kOmobEJ%2FD5os0wvA9eo7Ef7EhRMjpLL9tyEMZbbxWEj2BZ4yurd0Wk9HJv5pNeORLOcqb8zRI8H76JuzD7Uyr3oJo5LMJSDo6bPhQLo18q8LpaW3v4SyAeSTaQjyfWg6ukln7z4Yx8AN7NsciYAZXY&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T143142Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFO3YSMHC4%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=a2e79f52ba68014036937298a68640b7af2af6fe4f28bd12e07a1bd1673c0d0f"
+            alt=""
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://www.bbcgoodfood.com/recipes/green-salad-avocado"
+              class="text-success"
+              >Green salad with avocado</a
+            >
+          </h1>
+        </div>
+
+        <div class="col-12 mt-5 col-lg-2">
+          <img
+            class="img-thumbnail"
+            src=" https://edamam-product-images.s3.amazonaws.com/web-img/569/569920c2490386e42a7af54872a26ef8.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQD6qx4CK2mM4NSd9mhueRrdLlpZQxAFFwQg5MWNfUkNzwIgUeQCzcEak58EozvjllapERa9quKLKB0VjXiPb%2F7lU%2F8q2wQI7v%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDCn6EkD9W%2F7h%2FgqFUSqvBA%2BjBqnR%2B7PmvwwfHcghOvkdpj%2FtO7hxQAEYEJchI9vq%2FwXS9EjQdbfn28%2F4PqTj8DbX0kvXR8TQxVPp5omqopeWpiOO%2FkAEKYiVa49qafkZKJY%2FiXrhJ1Qwiuf7YxSQicBTOqv63DQzN0Nw6YTkKf5ypsCrYmo4%2FWG%2B5g6KLWfgaKDDLwNYq60h6FU7BtEoamx5OEtTGPmJTkyfNZrM9Mu%2BVDBTM1noiJoMRROBLEEMVCHx5dpCr88pJXwHG3QJo44jPswI0QEgDCyAZjyJxE6qs1yHRhtJ2lr0Q%2BgFS8QJIgqgdTgMPP%2BiGPLA9MfOn7jtqQ7o4MJ%2BPIDY1qCO1eb0EOy5wKT4diNnHaFW01w98CxBI2o3ASzzFodpvk3Xb0dDuiMDKoZZ2uLkU3TygjFTYNjamtjeMeMJ39yd55VPSSsOXuXtR6CXMO695dqxDx5JXbHbf7cCsXeaJSl6HsXRdMEbjGEArwo5L%2BvTe%2FuPo6FzI2t0ufyVCZzOebMuN6EOdk4cAGI8uZTv7ZpUlg1aYuphXWy%2FgyMiwUb9PBCwk4Yv40g32RgV68kUs9I%2F8APL2R7mb%2BXN0%2BVvrA0trNNL0y8Y4adviSYyp0w3to4d1ddY7mbl4F3z6TFpz6hSVNe8gxyXbmyjD4nuwg281x7JshVgljEXKLy3cP9l%2BdKHxA9GttRsS3rKFhp3PKseaxY8HinDui6hIIPLsj211P7AneOftkIodqL1HuByaHwwtPa%2BlwY6qQHKeBJiPcSa%2Fx%2F%2FtyMfsTZokVXvXMLxGNAnSH%2FUsxXInjLxowbhzOjgly6xE6%2BD1VckpVlkQLoRQza%2BsTWyrjXNmfi3fvfz6HiyZC7nuq2ydiUqugUjizVsZbVGCEDf5n0Ju%2BosHWOYNtfCkfV77nFklD%2Fp9itKunuYxSkIUTgKc%2BNny7zUNqdVnFiC7vvCYdZ6G69b6nG0zcpJdcdF2A6ooO%2FOnvEL%2BGsq&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T150034Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFPNBJ5MVU%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=60126e3809f85820c1b3db5883faa3243827f7737a727fac6df9ad6de773a58c"
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://food52.com/recipes/11646-green-bean-and-plum-salad"
+              class="text-success"
+              >Green Bean and Plum Salad</a
+            >
+          </h1>
+        </div>
+
+        <div class="col-12 mt-5 col-lg-2">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/6de/6dee8b14439e299cd670f5c89fbb5de2.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIAgMn%2BZpJ9ZgDY8HN2EB2nWK4UwSUXn4uzl%2BFeU1NYOHAiA7g0%2B%2F9E7TazpwhGXSnzZTjX6X7k%2BxyV%2FkDfd1eZ7h2CrbBAjw%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDE4NzAxNzE1MDk4NiIMChc8XAH5VVAhvENaKq8EDeA%2Bh2dDFf0JCI1ryie5stNtq%2FijvS5lwUdX6PENSX6WzCrQzHn7CP2%2BPQc852vD%2F40NzeWRyBKHhtICfS2xqP%2FGwWsD%2BINV0eOIIHd3k4eX5x%2BIIQesEdL%2FIeGI0MQwVdQ%2Fq8C54Pl2kFCnAWayCVUK4v2dx3z5qFQLPlcF9eq8gFeMnqsHl1UAFmfYiozAXyVkgo3NqdcxbnCuwFlOqbYMFdZOw9TMjntvpm%2BBscv44T7dAFLdlIZr6W%2FsV8Yf%2FZ7A0RpWhVQOqsv6oEdmtBf0xxmqZbPqkjRho%2Fdsesw%2BIRzs1LTCC6DMQa3YSANOywT8UP1%2Fjnjf4IvULyjjWsfJVwzKukJJfTvUISrXPyw4WV%2FlQpwHFqk6f7hbBiK6xyaw515PCYEQDUtTD6ZsFd1U9YkXZt46vVIpHR4ZwlloMUSzqtieTltH7DkoAO3937MwsOoZM5HgB8KFCqwNl1mjQw%2BxsLPwr6VGTXsQPtMJnoB6gMAJMpywldvd%2F8sU%2F3%2BIeVXOjvYm5I7hy6OU4pKKWgl%2F3buWJdfwqwfBrHuUV5mKr%2BDY4tB5qLP6Fj14rbdypGg38DVZ8Lfk%2B0JidYjia1pkVInhka%2FVYLzDWMaqvvyA5SEZUGh6S8eMF1E5f6%2FrYVWgGhRLGx0ZbkMeJ8XjtclYfp767MgZ337JwPu8WSiudhp%2BxlwCVnjkymcyAO9AjC3yabNCcIRXiLYiM7xt0e104Nvpy1XnZ6SzijC6pL%2BXBjqqAfeNXe%2FVaMIuagZ9BMBsZX3GC6xmz0w5AMGTHtjDYoLScXOYND%2BHV0CYUtl46SC7WvozTwOKwpqDMz13EE94qKZ78UAaFjX33DLiBUTLe7sVZxJXQ%2F5LpfGtWtYsJLZGNxueAzJofSXL%2F2qZJSuxeYQoKRSlKrNuSLVBAYt7ImIs%2FD9OasCY6qeKBjeH1j61eE%2BIndqaZ9r5d5TqLGfI0Ix5mu%2FG2pkoc9oD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T151212Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFK72JN4E7%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=e29d4f4bee5990cbdbc3de85cc84c211502c63f11389d8cb10e3cfee7ca6664e"
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://www.seriouseats.com/spinach-salad-with-blood-oranges-and-pistachio-recipe"
+              class="text-success"
+              >Spinach Salad with Blood Oranges and Pistachios</a
+            >
+          </h1>
+        </div>
+
+        <div class="col-12 mt-5 col-lg-2">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/24d/24d65b054ade65a87487e4c9b194e675?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIHTecH54ueWR8tRVwWpIOqI4WLjkGCIoyO069dAljfpZAiEAgdlm%2FJ5W1K7TWFaqembRfDADV0RKgiIBAQqNqkLHnrMq2wQI8P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDOyyHIjKR2yrmlj43CqvBMp2m6YIelhS9pJV2ZORmGmCh6CwXPtnIPxCOOddyDWEgTGGX8pPoArjnjOWUxf%2FPxvLxhzUFBw6Sv70%2Bebox30MnRQaekRTXaKcliql4lN3hMWvy6KvhOJVkYinFEkIHmSrAMvoYqieLLUxQuyp3nkafr4VfQ7%2BQFbI%2BHcvvYb3XPu0ZoMMdr1HzHY40RZ2QK9lnmc1SBGYuUStCWm7%2BMXmmkUZvkLsMSktVQnF%2Fpf2ry050GBrcI2cpn5vlodZ%2By0YcRy%2Big2XCKAMDcifiObpNSf7HXHvV84DyYWD49QerYlRPzPIEZnGoXpKApzrL77YfWlZPX6HVX2TDsOoWuAF%2B5lB1RgCaIV57TqZxYIVKpAfs7vJVbVKyfKUrvdaRSprBrMwack2YKplKyIETG1gzESQc5ETi4zBHx7jDGaf813R0XUlRz9SPEO%2B2Z9bdrJYLe0HoB%2FTV1DoXNL%2BIPrGkjWAxzc%2FGGT7LTWUi0gjqTh6tMw%2BqRIbDpsATSpDfhRclh7EPnxFKlpfPOsBDRRbD6QZnL40vS6uoFMqV38nbDp8lkY%2B5YEBloiqFYxPbRd%2FHbRfMktDVO197bhUJXU%2FdLuGkeYfLSkXkJ675VbReRcqzERwpwoPJ0q8ru9moep5Jn1e6kzFoCnhUOxv8NlOccVXCWhQFGnXeXyuNFFut%2BKrUj6GwIx%2FhytZfLKQfgX356Nds9BDoFB1a29PXsn2x45OmzhzAC6TDSpBDswwrJe%2FlwY6qQE%2BCM73OYNa%2BUNN29McP4dKEnsV7iW%2Frx5t0pjA4tr62UQRC9KeoRvqoCYNiDFs1xBAVJI2r%2FbDEXHXzqq%2BqUH9CzKd0KUXIgdx4pCljmhJJgjacL5CJWsl9WewcciGHiVfvhqUJF8gkvJYV5wEcuMOYwbbioMExDK56JXQA%2F9gqDz84My9PQOgVYIpyHpM4E32d%2B3DhaePdRgPVkP%2BhAcN%2BAaRoB9xEUEn&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T151316Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFINXUKX5H%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=369ada49962b854a788ba90c4bdcce4eefd3d8b5ca38df4aaa802f85308af507"
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://www.101cookbooks.com/archives/annas-california-miso-avocado-salad-recipe.html"
+              class="text-success"
+              >Anna’s California Miso Avocado Salad</a
+            >
+          </h1>
+        </div>
+
+        <div class="col-12 mt-5 col-lg-4">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/68a/68ad288ba387cfafd7d8b018f471432a.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIAWDJ0GmXIZT0xw13vB%2BPDYI%2FT5BoBMYE4izYljw448QAiAG2qpUacZjSvLaMR0eB9utisEHG%2BFiwrOVWyYYK55JdirbBAjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDE4NzAxNzE1MDk4NiIMK68yJI6Bg62%2FdIgBKq8EcO2QyjaHVuu73MWxhfs437AiUVmyLG4LlCtpblEE%2FBj1nrmE5RcoJZLUE8LdCuOJBW6%2F6y7pLm1lMObVsdXDzGCmWlUWgQuQo9sDSyigHGpsXhwdnbd%2BzAiWaQWlqEgoEEkR%2BYBSUyIdEl7tBvlV%2FJP7Y00aQxDCtABwC2krqnlHU%2BqFrUzJXrdaM4toJlYk2SCGH%2FnhIOXjYcJJdR4f8Kp5uerKMPTMjKZO0reE%2BPWTV%2BByXflCS7chvCiJwhntu8Wv6kbyMWo1lqz%2BaADg2qzZYemRXUVWNtaaUk24mfbMxmo0FdPe53Tn39uSUm8WkKZWpMa3Wr55d7AH8NDLxOBdq11mOAdcLWiTp%2FobX%2BdPiTl%2FHCV7L%2BPfytu2URpzMKr%2F7ojeE7m%2B8ikAJ3SqrMEYbCkN2XyP3mzM5n0UVBoAOnfbYLkG5qRtUBgxawA%2FqykrdhHp8snwMdasebA4hILJkkBOMP7h8SjhwrZBAWrouW9taBrMWYbCnMjAGfhCh3qRa2bhLVYqljAx8qmuYOo3oD%2BQxTRlESPb0u3jT8cAobIBFGbm36%2B76SzTjoF%2BHEi3SPKb%2BrtZ7M83x7xVq%2Fsghd9yY11%2Bttl4dzasivFzC29hjiOUId6pzFRcGHLRoU%2Fap9fHFmNp1v1CJWdVEATos3ihxpatiEEUoQEbFGxK31NugA07bO7aToaZWbubX8eAIMaWZ6sItX17xFQHanihXYW8MkNqZs1m5hiiljCyk7%2BXBjqqAYhVhEQErM%2BiFwrpqz4VBqaoEouDPFvtAuQqIR3frW9E1J3UxlYEDOnY4%2BxxHn0Ntv8SY2pCc%2BlV8zh9LETeoPOMUJgKjtJUNN4yKiuRynsPAjta21vpLprbArFlayFFGUJo9Q%2ByVos%2FIIqCU%2BdBngKsfCyOtRv1qUsMZbYTC4NE35v0KybZl13tTbi6WSoAimW2YViovt%2BzXHSmKZLUDOaO8hhxjadPNxNH&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T151609Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFAYWQPNGA%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d274493af7b988214e9439996b7a40f48b7203460ec1fb6a21e4a4453ea7847d"
+            alt=""
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://honestcooking.com/hot-chickpea-salad/"
+              class="text-success"
+              >Hot Chickpea Salad</a
+            >
+          </h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 mt-5 col-lg-4">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/577/5778868137b251575951d50923455c3c.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIAWDJ0GmXIZT0xw13vB%2BPDYI%2FT5BoBMYE4izYljw448QAiAG2qpUacZjSvLaMR0eB9utisEHG%2BFiwrOVWyYYK55JdirbBAjv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDE4NzAxNzE1MDk4NiIMK68yJI6Bg62%2FdIgBKq8EcO2QyjaHVuu73MWxhfs437AiUVmyLG4LlCtpblEE%2FBj1nrmE5RcoJZLUE8LdCuOJBW6%2F6y7pLm1lMObVsdXDzGCmWlUWgQuQo9sDSyigHGpsXhwdnbd%2BzAiWaQWlqEgoEEkR%2BYBSUyIdEl7tBvlV%2FJP7Y00aQxDCtABwC2krqnlHU%2BqFrUzJXrdaM4toJlYk2SCGH%2FnhIOXjYcJJdR4f8Kp5uerKMPTMjKZO0reE%2BPWTV%2BByXflCS7chvCiJwhntu8Wv6kbyMWo1lqz%2BaADg2qzZYemRXUVWNtaaUk24mfbMxmo0FdPe53Tn39uSUm8WkKZWpMa3Wr55d7AH8NDLxOBdq11mOAdcLWiTp%2FobX%2BdPiTl%2FHCV7L%2BPfytu2URpzMKr%2F7ojeE7m%2B8ikAJ3SqrMEYbCkN2XyP3mzM5n0UVBoAOnfbYLkG5qRtUBgxawA%2FqykrdhHp8snwMdasebA4hILJkkBOMP7h8SjhwrZBAWrouW9taBrMWYbCnMjAGfhCh3qRa2bhLVYqljAx8qmuYOo3oD%2BQxTRlESPb0u3jT8cAobIBFGbm36%2B76SzTjoF%2BHEi3SPKb%2BrtZ7M83x7xVq%2Fsghd9yY11%2Bttl4dzasivFzC29hjiOUId6pzFRcGHLRoU%2Fap9fHFmNp1v1CJWdVEATos3ihxpatiEEUoQEbFGxK31NugA07bO7aToaZWbubX8eAIMaWZ6sItX17xFQHanihXYW8MkNqZs1m5hiiljCyk7%2BXBjqqAYhVhEQErM%2BiFwrpqz4VBqaoEouDPFvtAuQqIR3frW9E1J3UxlYEDOnY4%2BxxHn0Ntv8SY2pCc%2BlV8zh9LETeoPOMUJgKjtJUNN4yKiuRynsPAjta21vpLprbArFlayFFGUJo9Q%2ByVos%2FIIqCU%2BdBngKsfCyOtRv1qUsMZbYTC4NE35v0KybZl13tTbi6WSoAimW2YViovt%2BzXHSmKZLUDOaO8hhxjadPNxNH&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T152330Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFAYWQPNGA%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=326b8daa4b9e11fb03a9fa75e8686ae2b332261f585c99c2e0bb120812af1f6f"
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://www.seriouseats.com/broccoli-recipes"
+              class="text-success"
+              >Broccolini Salad</a
+            >
+          </h1>
+        </div>
+
+        <div class="col-12 mt-5 col-lg-2">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/a24/a24506436ba575f859483d1798d0c921.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIHTecH54ueWR8tRVwWpIOqI4WLjkGCIoyO069dAljfpZAiEAgdlm%2FJ5W1K7TWFaqembRfDADV0RKgiIBAQqNqkLHnrMq2wQI8P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDOyyHIjKR2yrmlj43CqvBMp2m6YIelhS9pJV2ZORmGmCh6CwXPtnIPxCOOddyDWEgTGGX8pPoArjnjOWUxf%2FPxvLxhzUFBw6Sv70%2Bebox30MnRQaekRTXaKcliql4lN3hMWvy6KvhOJVkYinFEkIHmSrAMvoYqieLLUxQuyp3nkafr4VfQ7%2BQFbI%2BHcvvYb3XPu0ZoMMdr1HzHY40RZ2QK9lnmc1SBGYuUStCWm7%2BMXmmkUZvkLsMSktVQnF%2Fpf2ry050GBrcI2cpn5vlodZ%2By0YcRy%2Big2XCKAMDcifiObpNSf7HXHvV84DyYWD49QerYlRPzPIEZnGoXpKApzrL77YfWlZPX6HVX2TDsOoWuAF%2B5lB1RgCaIV57TqZxYIVKpAfs7vJVbVKyfKUrvdaRSprBrMwack2YKplKyIETG1gzESQc5ETi4zBHx7jDGaf813R0XUlRz9SPEO%2B2Z9bdrJYLe0HoB%2FTV1DoXNL%2BIPrGkjWAxzc%2FGGT7LTWUi0gjqTh6tMw%2BqRIbDpsATSpDfhRclh7EPnxFKlpfPOsBDRRbD6QZnL40vS6uoFMqV38nbDp8lkY%2B5YEBloiqFYxPbRd%2FHbRfMktDVO197bhUJXU%2FdLuGkeYfLSkXkJ675VbReRcqzERwpwoPJ0q8ru9moep5Jn1e6kzFoCnhUOxv8NlOccVXCWhQFGnXeXyuNFFut%2BKrUj6GwIx%2FhytZfLKQfgX356Nds9BDoFB1a29PXsn2x45OmzhzAC6TDSpBDswwrJe%2FlwY6qQE%2BCM73OYNa%2BUNN29McP4dKEnsV7iW%2Frx5t0pjA4tr62UQRC9KeoRvqoCYNiDFs1xBAVJI2r%2FbDEXHXzqq%2BqUH9CzKd0KUXIgdx4pCljmhJJgjacL5CJWsl9WewcciGHiVfvhqUJF8gkvJYV5wEcuMOYwbbioMExDK56JXQA%2F9gqDz84My9PQOgVYIpyHpM4E32d%2B3DhaePdRgPVkP%2BhAcN%2BAaRoB9xEUEn&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T152828Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFINXUKX5H%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=82fc751111c1d4e91acd9d0178b46a95df56f17ffa4734ca07ec782eeb47f139"
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://www.seriouseats.com/french-recipes-5117214"
+              class="text-success"
+              >The Secret Ingredient (Harissa): Salade Cuite
+            </a>
+          </h1>
+        </div>
+
+        <div class="col-12 mt-5 col-lg-2">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/898/898e720e27adb868ca0b1cb4547c7967.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIAgMn%2BZpJ9ZgDY8HN2EB2nWK4UwSUXn4uzl%2BFeU1NYOHAiA7g0%2B%2F9E7TazpwhGXSnzZTjX6X7k%2BxyV%2FkDfd1eZ7h2CrbBAjw%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDE4NzAxNzE1MDk4NiIMChc8XAH5VVAhvENaKq8EDeA%2Bh2dDFf0JCI1ryie5stNtq%2FijvS5lwUdX6PENSX6WzCrQzHn7CP2%2BPQc852vD%2F40NzeWRyBKHhtICfS2xqP%2FGwWsD%2BINV0eOIIHd3k4eX5x%2BIIQesEdL%2FIeGI0MQwVdQ%2Fq8C54Pl2kFCnAWayCVUK4v2dx3z5qFQLPlcF9eq8gFeMnqsHl1UAFmfYiozAXyVkgo3NqdcxbnCuwFlOqbYMFdZOw9TMjntvpm%2BBscv44T7dAFLdlIZr6W%2FsV8Yf%2FZ7A0RpWhVQOqsv6oEdmtBf0xxmqZbPqkjRho%2Fdsesw%2BIRzs1LTCC6DMQa3YSANOywT8UP1%2Fjnjf4IvULyjjWsfJVwzKukJJfTvUISrXPyw4WV%2FlQpwHFqk6f7hbBiK6xyaw515PCYEQDUtTD6ZsFd1U9YkXZt46vVIpHR4ZwlloMUSzqtieTltH7DkoAO3937MwsOoZM5HgB8KFCqwNl1mjQw%2BxsLPwr6VGTXsQPtMJnoB6gMAJMpywldvd%2F8sU%2F3%2BIeVXOjvYm5I7hy6OU4pKKWgl%2F3buWJdfwqwfBrHuUV5mKr%2BDY4tB5qLP6Fj14rbdypGg38DVZ8Lfk%2B0JidYjia1pkVInhka%2FVYLzDWMaqvvyA5SEZUGh6S8eMF1E5f6%2FrYVWgGhRLGx0ZbkMeJ8XjtclYfp767MgZ337JwPu8WSiudhp%2BxlwCVnjkymcyAO9AjC3yabNCcIRXiLYiM7xt0e104Nvpy1XnZ6SzijC6pL%2BXBjqqAfeNXe%2FVaMIuagZ9BMBsZX3GC6xmz0w5AMGTHtjDYoLScXOYND%2BHV0CYUtl46SC7WvozTwOKwpqDMz13EE94qKZ78UAaFjX33DLiBUTLe7sVZxJXQ%2F5LpfGtWtYsJLZGNxueAzJofSXL%2F2qZJSuxeYQoKRSlKrNuSLVBAYt7ImIs%2FD9OasCY6qeKBjeH1j61eE%2BIndqaZ9r5d5TqLGfI0Ix5mu%2FG2pkoc9oD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T153035Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFK72JN4E7%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=ecb402433ad1aa5f5bd5ed75c8fa33e0723cf2c0a03b31a1667f71fd8c6255ab"
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://www.jamieoliver.com/recipes/eggs-recipes/epic-egg-salad/"
+              class="text-success"
+              >Epic egg salad</a
+            >
+          </h1>
+        </div>
+
+        <div class="col-12 mt-5 col-lg-2">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/f61/f6157622f94ea3415c24d796a1847de0?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIHTecH54ueWR8tRVwWpIOqI4WLjkGCIoyO069dAljfpZAiEAgdlm%2FJ5W1K7TWFaqembRfDADV0RKgiIBAQqNqkLHnrMq2wQI8P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDOyyHIjKR2yrmlj43CqvBMp2m6YIelhS9pJV2ZORmGmCh6CwXPtnIPxCOOddyDWEgTGGX8pPoArjnjOWUxf%2FPxvLxhzUFBw6Sv70%2Bebox30MnRQaekRTXaKcliql4lN3hMWvy6KvhOJVkYinFEkIHmSrAMvoYqieLLUxQuyp3nkafr4VfQ7%2BQFbI%2BHcvvYb3XPu0ZoMMdr1HzHY40RZ2QK9lnmc1SBGYuUStCWm7%2BMXmmkUZvkLsMSktVQnF%2Fpf2ry050GBrcI2cpn5vlodZ%2By0YcRy%2Big2XCKAMDcifiObpNSf7HXHvV84DyYWD49QerYlRPzPIEZnGoXpKApzrL77YfWlZPX6HVX2TDsOoWuAF%2B5lB1RgCaIV57TqZxYIVKpAfs7vJVbVKyfKUrvdaRSprBrMwack2YKplKyIETG1gzESQc5ETi4zBHx7jDGaf813R0XUlRz9SPEO%2B2Z9bdrJYLe0HoB%2FTV1DoXNL%2BIPrGkjWAxzc%2FGGT7LTWUi0gjqTh6tMw%2BqRIbDpsATSpDfhRclh7EPnxFKlpfPOsBDRRbD6QZnL40vS6uoFMqV38nbDp8lkY%2B5YEBloiqFYxPbRd%2FHbRfMktDVO197bhUJXU%2FdLuGkeYfLSkXkJ675VbReRcqzERwpwoPJ0q8ru9moep5Jn1e6kzFoCnhUOxv8NlOccVXCWhQFGnXeXyuNFFut%2BKrUj6GwIx%2FhytZfLKQfgX356Nds9BDoFB1a29PXsn2x45OmzhzAC6TDSpBDswwrJe%2FlwY6qQE%2BCM73OYNa%2BUNN29McP4dKEnsV7iW%2Frx5t0pjA4tr62UQRC9KeoRvqoCYNiDFs1xBAVJI2r%2FbDEXHXzqq%2BqUH9CzKd0KUXIgdx4pCljmhJJgjacL5CJWsl9WewcciGHiVfvhqUJF8gkvJYV5wEcuMOYwbbioMExDK56JXQA%2F9gqDz84My9PQOgVYIpyHpM4E32d%2B3DhaePdRgPVkP%2BhAcN%2BAaRoB9xEUEn&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T153209Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFINXUKX5H%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=cd40bf2c07e8ed624a92a6451f056a1ea240531b9595eb35c44c711436cd8d3e"
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://www.eatingwell.com/recipe/276172/chopped-salad-with-sriracha-tofu-peanut-dressing/"
+              class="text-success"
+              >Chopped Salad with Sriracha Tofu & Peanut Dressing</a
+            >
+          </h1>
+        </div>
+
+        <div class="col-12 mt-5 col-lg-2">
+          <img
+            class="img-thumbnail"
+            src="https://edamam-product-images.s3.amazonaws.com/web-img/4b9/4b979c4abbb602ae449bce503e3a0021.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIHTecH54ueWR8tRVwWpIOqI4WLjkGCIoyO069dAljfpZAiEAgdlm%2FJ5W1K7TWFaqembRfDADV0RKgiIBAQqNqkLHnrMq2wQI8P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwxODcwMTcxNTA5ODYiDOyyHIjKR2yrmlj43CqvBMp2m6YIelhS9pJV2ZORmGmCh6CwXPtnIPxCOOddyDWEgTGGX8pPoArjnjOWUxf%2FPxvLxhzUFBw6Sv70%2Bebox30MnRQaekRTXaKcliql4lN3hMWvy6KvhOJVkYinFEkIHmSrAMvoYqieLLUxQuyp3nkafr4VfQ7%2BQFbI%2BHcvvYb3XPu0ZoMMdr1HzHY40RZ2QK9lnmc1SBGYuUStCWm7%2BMXmmkUZvkLsMSktVQnF%2Fpf2ry050GBrcI2cpn5vlodZ%2By0YcRy%2Big2XCKAMDcifiObpNSf7HXHvV84DyYWD49QerYlRPzPIEZnGoXpKApzrL77YfWlZPX6HVX2TDsOoWuAF%2B5lB1RgCaIV57TqZxYIVKpAfs7vJVbVKyfKUrvdaRSprBrMwack2YKplKyIETG1gzESQc5ETi4zBHx7jDGaf813R0XUlRz9SPEO%2B2Z9bdrJYLe0HoB%2FTV1DoXNL%2BIPrGkjWAxzc%2FGGT7LTWUi0gjqTh6tMw%2BqRIbDpsATSpDfhRclh7EPnxFKlpfPOsBDRRbD6QZnL40vS6uoFMqV38nbDp8lkY%2B5YEBloiqFYxPbRd%2FHbRfMktDVO197bhUJXU%2FdLuGkeYfLSkXkJ675VbReRcqzERwpwoPJ0q8ru9moep5Jn1e6kzFoCnhUOxv8NlOccVXCWhQFGnXeXyuNFFut%2BKrUj6GwIx%2FhytZfLKQfgX356Nds9BDoFB1a29PXsn2x45OmzhzAC6TDSpBDswwrJe%2FlwY6qQE%2BCM73OYNa%2BUNN29McP4dKEnsV7iW%2Frx5t0pjA4tr62UQRC9KeoRvqoCYNiDFs1xBAVJI2r%2FbDEXHXzqq%2BqUH9CzKd0KUXIgdx4pCljmhJJgjacL5CJWsl9WewcciGHiVfvhqUJF8gkvJYV5wEcuMOYwbbioMExDK56JXQA%2F9gqDz84My9PQOgVYIpyHpM4E32d%2B3DhaePdRgPVkP%2BhAcN%2BAaRoB9xEUEn&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20220807T153351Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFINXUKX5H%2F20220807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=5eab32d2c0629d1087f4c865daea157dba01d75e0875f0eb2a746efed2999c84"
+            alt=""
+          />
+          <h1>
+            <a
+              target="_blank"
+              href="https://www.bbcgoodfood.com/recipes/salad-aveyronnaise"
+              class="text-success"
+              >Salad Aveyronnaise</a
+            >
+          </h1>
+        </div>
+      </div>
+    </div>
+    <hr class="bg-secondary mt-5" />
+
+    <div class="container text-center">
+      <h1 class="text-bg-success mt-5" style="font-size: 3rem">BOOKS</h1>
+      <div id="main_container" class="row"></div>
+    </div>
+
+    <hr class="bg-secondary mt-5" />
+    <div class="container d-flex justify-content-center">
+      <p class="text-secondary">
+        Be part of our community
+        <a href="/pages/begin-your-journey/begin-your-journey.html">
+          <img
+            style="width: 5rem"
+            class="img-fluid"
+            src="/logo/vegan-house-logo.png"
+            alt=""
+          /> </a
+        >.
+      </p>
+    </div>
+
+    <footer id="footer" class="text-center text-lg-start text-muted">
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+      </section>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Vegan House</h6>
+              <p>
+                Vegan House, the place you might begin your journey to become a
+                vegans, slowly but surely! A truly cruelty-free life is more
+                than just the food you eat, so while you'll find plenty of
+                amazing vegan informaition, guidens and more. we also highlight
+                inspirational vegan influensters, and vegan lifestyle tips and
+                advice in hundreds of articles from the around the world.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                social networking site
+              </h6>
+
+              <p>
+                <a
+                  target="_blank"
+                  class="text-reset"
+                  href="https://github.com/SolomonAvraham"
+                  ><img
+                    src="/logo/github-logo.png"
+                    width="30"
+                    alt="github-logo"
+                  />
+                </a>
+              </p>
+              <p>
+                <a
+                  class="text-reset"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/solomon-avraham-82b8a2234/"
+                  ><img src="/logo/linkden-logo.png" width="30" alt="" />
+                </a>
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">More informaition</h6>
+              <p>
+                <a
+                  href="https://www.vegansociety.com/"
+                  target="_blank"
+                  class="text-reset"
+                  >Vegan Society</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://www.etsy.com/market/vegan_supporter"
+                  target="_blank"
+                  class="text-reset"
+                  >Etsy</a
+                >
+              </p>
+              <p>
+                <a href="https://vegan.com/" target="_blank" class="text-reset"
+                  >Vegan</a
+                >
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3"></i> Tel-Aviv, Israel.</p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                vegan_house_support@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> +972 50-465-2435</p>
+              <p><i class="fas fa-print me-3"></i> +972 08-622-2218</p>
+              <p>
+                <a href=""
+                  ><img src="/logo/vegan-house-logo.png" width="100" alt="logo"
+                /></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2021 Copyright:
+        <a class="text-reset fw-bold" href="/index.html">Vegan-House.com</a>
+      </div>
+    </footer>
+  </body>
+</html>
